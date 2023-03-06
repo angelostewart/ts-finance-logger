@@ -75,11 +75,74 @@ uid = 123;
 
 // objects 
 
-
 let characterOne: object;
 characterOne = {name: 'one', age: 20}
 
 let characterTwo: {
     name: 'two',
     age: 30,
+};
+
+// any type
+
+let age: any = 25;
+
+age = '25';
+age = true;
+age = {number: 34, year: 1989};
+
+// functions
+
+let greet: Function;
+
+greet = () => {
+    console.log('hello world')
 }
+
+const add = (a: number, b: number, c?: number) => {
+    console.log(a+b)
+}
+
+add(10, 10)
+
+const minus = (a: number, b: number) => {
+    return a + b;
+}
+
+// result is inferred to be a number because it is equal to the return of minus
+let result = minus(10, 7)
+
+// explicitly declare the return type
+const multiply = (a: number, b: number): number => {
+    return a * b;
+}
+
+
+// type alias
+
+
+// without alias
+const greetAgain = (user: { name: string, uid: string | number}) => {
+    user.name = 'bob'
+    user.uid = 3455467
+    console.log(`${user.name} says hello, his UID is ${user.uid}`)
+}
+
+
+// with alias
+type StringOrNum = string | number;
+type objWithName = { name: string, uid: StringOrNum}
+
+const greetAgainAlias = (user: objWithName) => {
+    user.name = 'bob'
+    user.uid = 3455467
+    console.log(`${user.name} says hello, his UID is ${user.uid}`)
+}
+
+// function signatures 
+
+let hello
+
+
+
+
