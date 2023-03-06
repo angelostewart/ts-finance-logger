@@ -109,3 +109,16 @@ logDetails = (avatar) => {
 logDetails = (avatar) => {
     console.log(`${avatar.name} is ${avatar.age} years old`);
 };
+// Generics
+const addUID = (obj) => {
+    let uid = Math.floor(Math.random() * 1000);
+    return Object.assign(Object.assign({}, obj), { uid });
+};
+let docOne = addUID({ name: "bob", age: 40 });
+console.log(docOne.name);
+const docThree = {
+    uid: 1,
+    resourceName: 'person',
+    data: { name: 'bob' }
+};
+let person = ['bob', 32, true];

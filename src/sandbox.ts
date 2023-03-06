@@ -176,7 +176,34 @@ logDetails = (avatar: person) => {
     console.log(`${avatar.name} is ${avatar.age} years old`)
 }
 
+// Generics
 
+const addUID = <T extends object>(obj: T) => {
+    let uid = Math.floor(Math.random() * 1000);
+    return { ...obj, uid };
+  };
+  
+  let docOne = addUID({ name: "bob", age: 40 });
+  
+  console.log(docOne.name);
+  
+  
+  // with interfaces
+  interface Resource<T> {
+    uid: number;
+    resourceName: string;
+    data: T;
+  }
+  
+  const docThree: Resource<object> = {
+    uid: 1,
+    resourceName: 'person',
+    data: {name: 'bob'}
+  }
+  
+  let person: [string, number, boolean] = ['bob', 32, true];
+  
+  
 
 
 
