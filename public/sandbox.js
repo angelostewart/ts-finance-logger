@@ -85,4 +85,27 @@ const greetAgainAlias = (user) => {
     console.log(`${user.name} says hello, his UID is ${user.uid}`);
 };
 // function signatures 
+// let hello: Function;
+// example 1
 let hello;
+hello = (name, greeting) => {
+    console.log(`${name} says ${greeting}`);
+};
+// example 2 
+let calc;
+calc = (num1, num2, action) => {
+    if (action === 'add') {
+        return num1 + num2;
+    }
+    else {
+        return num1 - num2;
+    }
+};
+// example 3
+let logDetails;
+logDetails = (avatar) => {
+    console.log(`${avatar.name} is ${avatar.age} years old`);
+};
+logDetails = (avatar) => {
+    console.log(`${avatar.name} is ${avatar.age} years old`);
+};
